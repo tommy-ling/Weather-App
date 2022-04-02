@@ -42,6 +42,7 @@ export async function fetchForecastData(searchTerm) {
       days: 3
     }
   })
+  console.log(data)
   return data
 }
 
