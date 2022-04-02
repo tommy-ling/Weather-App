@@ -4,6 +4,8 @@ import { autoComplete, renderOption } from './autocomplete.js'
 import { debounce } from './debounce.js'
 
 export const backgroundImage = document.querySelector('.container')
+export const text = document.querySelectorAll('.timebar h1, h3')
+
 const search = document.querySelector('input')
 const dropdown = document.querySelector('.dropdown')
 const resultsWrapper = document.querySelector('.results')

@@ -1,10 +1,11 @@
-import { backgroundImage } from './index.js'
+import { backgroundImage, text } from './index.js'
 import { fetchData } from './fetch.js'
 
 export async function weatherBackground(name) {
   const data = await fetchData(name)
   const code = data.current.condition.code
   const isDay = data.current.is_day
+
 
   if(code===1003 && isDay===1) {
     backgroundImage.style.background = 'url(./pics/partlycloudy.jpeg)'
@@ -14,6 +15,9 @@ export async function weatherBackground(name) {
   }
   if(code===1000 && isDay===0) {
     backgroundImage.style.background = 'url(./pics/clearnight.jpeg)'
+    text.forEach(el => {
+      el.style.color = 'white'
+    })
   }
   if((code===1006 || code===1009 || code===1063 || code===1066 || code===1069
     || code===1072 || code===1087) && isDay === 1) {
@@ -27,13 +31,22 @@ export async function weatherBackground(name) {
     || code===1240 || code===1273 || code===1150 || code===1153 || code===1168
     || code===1171 || code===1198) && isDay === 1) {
     backgroundImage.style.background = 'url(./pics/rain.jpeg)'
+    text.forEach(el => {
+      el.style.color = 'white'
+    })
   }
   if((code===1195 || code===1201 || code===1243 || code===1246 || code===1252
     || code===1276) && isDay === 1) {
     backgroundImage.style.background = 'url(./pics/heavyrain.jpeg)'
+    text.forEach(el => {
+      el.style.color = 'white'
+    })
   }
   if((code===1276 || code===1279) && (isDay === 1 || isDay ===0)) {
     backgroundImage.style.background = 'url(./pics/storm.jpeg)'
+    text.forEach(el => {
+      el.style.color = 'white'
+    })
   }
   if((code===1204 || code===1207 || code===1237 || code===1249 || code===1261
     || code===1264) && isDay === 1) {
@@ -47,6 +60,9 @@ export async function weatherBackground(name) {
   }
   if((code!==1000 && code!==1276 && code!==1279) && isDay===0) {
     backgroundImage.style.background = 'url(./pics/night.jpeg)'
+    text.forEach(el => {
+      el.style.color = 'white'
+    })
   }
   backgroundImage.style.backgroundSize = 'cover'
 
