@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: black;
+}
+.container {
+  width: 75vw;
+  margin: auto;
+  background: lightgrey;
+  padding: 5px 20px 35px 20px;
+}
+
+#search {
+  position: relative;
+  padding: 15px;
+}
+#search input,
+button {
+  height: 25px;
+  border-radius: 25px;
+}
+button {
+  position: absolute;
+  right: 0;
+}
+button:hover {
+  background-color: pink;
+  cursor: pointer;
+}
+
+.timebar {
+  display: grid;
+  grid-template-areas:
+    "city"
+    "time"
+    "condition";
+  grid-gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.timebar h1 {
+  grid-area: city;
+}
+.timebar h3 {
+  grid-area: time;
+}
+.timebar img {
+  grid-area: condition;
+}
+
+.current {
+  margin: 5px 5px 0 5px;
+}
+.forecast {
+  margin: 20px 5px;
+}
+.future {
+  margin: 30px 5px 0px 5px
+}
+
+.current ul,
+.forecast ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+}
+.current ul div {
+  border-radius: 15px;
+  background-color: pink;
+  padding: 5px;
+}
+
+.forecast ul div {
+  background-color: #f8e4dc;
+  padding: 10px 20px 15px 20px;
+  box-shadow: 5px 5px 10px grey;
+}
+.forecast ul div li ul,
+.future ul div li ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast ul div li ul h4:not(:first-child),
+.future ul div li ul h4:not(:first-child) {
+  float: right
+}
+
+.future ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+.future ul div {
+  background-color: #bbf2f2;
+  padding: 15px 50px;
+  box-shadow: 5px 5px 10px grey;
+}
+
+h1, h3, h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+
+.hidden {
+  display: none;
+}
