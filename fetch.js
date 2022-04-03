@@ -7,7 +7,6 @@ export async function fetchData(searchTerm) {
       q: searchTerm
     }
   })
-  console.log(data)
   return data
 }
 
@@ -42,7 +41,6 @@ export async function fetchForecastData(searchTerm) {
       days: 3
     }
   })
-  console.log(data)
   return data
 }
 
@@ -138,8 +136,8 @@ export const renderHourlyForecast = (forecastHoursList) => {
           <li><span class="toggle" style="float: left">Temp °C</span><span class="hidden" style="float: left">Temp °F</span><h4 class="temp">${el[2]}</h4></li>
           <li><span class="toggle" style="float: left">Feels °C</span><span class="hidden" style="float: left">Feels °F</span><h4 class="temp">${el[3]}</h4></li>
           <li><span class="toggle" style="float: left">Wind kph</span><span class="hidden" style="float: left">Wind mph</span><h4 class="windspeed">${el[4]}</h4></li>
-          <li><span style="float: left">Cloud cover</span><h4>${el[5]}%</h4></li>
-          <li><span style="float: left">Precip chance</span><h4>${el[6]}%</h4></li>
+          <li><em style="float: left">Cloud cover</em><h4>${el[5]}%</h4></li>
+          <li><em style="float: left">Precip chance</em><h4>${el[6]}%</h4></li>
         </ul>
       </li>
     </div>
@@ -158,7 +156,7 @@ export const renderDailyForecast = (forecastDailyList) => {
           <li><img src="${el[1]}"></li>
           <li><span class="toggle" style="float: left">Max °C</span><span class="hidden" style="float: left">Max °F</span><h4 class="temp">${el[2]}</h4></li>
           <li><span class="toggle" style="float: left">Min °C</span><span class="hidden" style="float: left">Min °F</span><h4 class="temp">${el[3]}</h4></li>
-          <li><span style="float: left">Precip chance</span><h4>${el[4]}%</h4></li>
+          <li><em style="float: left">Precip chance</em><h4>${el[4]}%</h4></li>
         </ul>
       </li>
     </div>

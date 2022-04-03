@@ -113,3 +113,7 @@ h3 {
 .hidden {
   display: none;
 }
+
+em {
+  font-style: normal;
+}

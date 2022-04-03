@@ -3,9 +3,9 @@ import { fetchCurrentData, hoursList, renderHourlyForecast, dailyList, renderDai
 
 export async function init (name) {
   await fetchCurrentData(name)
+  await weatherBackground(name)
   const forecastHoursList =  await hoursList(name)
   document.querySelector('.forecast ul').innerHTML = renderHourlyForecast(forecastHoursList)
   const forecastDailyList =  await dailyList(name)
   document.querySelector('.future ul').innerHTML = renderDailyForecast(forecastDailyList)
-  await weatherBackground(name)
 }

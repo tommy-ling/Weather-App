@@ -1,6 +1,6 @@
 import { init } from './init.js'
 import { toImperial, toMetric } from './convertor.js'
-import { autoComplete, renderOption } from './autocomplete.js'
+import { autoComplete, renderOption, toggleOnClick } from './autocomplete.js'
 import { debounce } from './debounce.js'
 
 export const backgroundImage = document.querySelector('.container')
@@ -33,6 +33,7 @@ const onInput = async event => {
       dropdown.classList.remove('is-active');
       search.value = list[0];
       await init(list[0])
+      toggleOnClick()
     });
 
     resultsWrapper.appendChild(option)
