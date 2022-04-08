@@ -28,7 +28,7 @@ const onInput = async event => {
   for(let list of cityList) {
     const option = document.createElement('a')
     option.classList.add('dropdown-item')
-    option.innerHTML = renderOption(list)
+    option.insertAdjacentHTML('afterbegin', renderOption(list))
     option.addEventListener('click', async (event) => {
       dropdown.classList.remove('is-active');
       search.value = list[0];
@@ -50,10 +50,10 @@ document.addEventListener('click', event => {
 
 // C/F Conversion
 const button = document.querySelector('button')
-const hidden = document.querySelectorAll('span.hidden')
-const visible = document.querySelectorAll('span.toggle')
 
 button.addEventListener('click', event => {
+  const hidden = document.querySelectorAll('span.hidden')
+  const visible = document.querySelectorAll('span.toggle')
   hidden.forEach(el => {
     el.classList.toggle('hidden')
     el.classList.toggle('toggle')
