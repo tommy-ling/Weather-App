@@ -6,6 +6,15 @@ An imperial/metric convertor was added to convert between fahrenheit and celsius
 Background changes according to day vs night and current weather conditions.
 
 ![Alt text](gif1.gif)
+
+/
+
 ![Alt text](gif2.gif)
+
+/
+
 ![Alt text](gif3.gif)
+
+/
+
 ![Alt text](gif4.gif)
